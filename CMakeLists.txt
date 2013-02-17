@@ -1,7 +1,7 @@
 # Copyright (C) 2008-2013 TrinityCore <http://www.trinitycore.org/>f
 #
 # This file is free software; as a special exception the author gives
-# unlimited permission to copy and/or distribute it, with or without
+# unlimited permission to copy and/or distribute it, with or withoutd
 # modifications, as long as this notice is preserved.
 #
 # This program is distributed in the hope that it will be useful, but
