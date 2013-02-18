@@ -54,7 +54,7 @@
                     Player->ADD_GOSSIP_ITEM(4, name+" of the Alliance", GOSSIP_SENDER_MAIN, 27);  
                     Player->ADD_GOSSIP_ITEM(4, "Justicar "+name, GOSSIP_SENDER_MAIN, 25);  
                     Player->ADD_GOSSIP_ITEM(4, "Flame Keeper "+name, GOSSIP_SENDER_MAIN, 3);              
-                   // Player->ADD_GOSSIP_ITEM(4, "Arena Master "+name, GOSSIP_SENDER_MAIN, 5);              
+                    //Player->ADD_GOSSIP_ITEM(4, "Arena Master "+name, GOSSIP_SENDER_MAIN, 5);              
                     Player->ADD_GOSSIP_ITEM(4, "Stalker "+name, GOSSIP_SENDER_MAIN, 8);            
                     Player->ADD_GOSSIP_ITEM(4, "Assassin "+name, GOSSIP_SENDER_MAIN, 9);
                     Player->ADD_GOSSIP_ITEM(4, "Doctor "+name, GOSSIP_SENDER_MAIN, 10);
@@ -83,7 +83,7 @@
                     Player->ADD_GOSSIP_ITEM(4, name+" of the Horde", GOSSIP_SENDER_MAIN, 28);
                     Player->ADD_GOSSIP_ITEM(4, "Conqueror "+name, GOSSIP_SENDER_MAIN, 26);
                     Player->ADD_GOSSIP_ITEM(4, "Flame Keeper "+name, GOSSIP_SENDER_MAIN, 3);              
-                   // Player->ADD_GOSSIP_ITEM(4, "Arena Master "+name, GOSSIP_SENDER_MAIN, 5);              
+                    //Player->ADD_GOSSIP_ITEM(4, "Arena Master "+name, GOSSIP_SENDER_MAIN, 5);              
                     Player->ADD_GOSSIP_ITEM(4, "Stalker "+name, GOSSIP_SENDER_MAIN, 8);            
                     Player->ADD_GOSSIP_ITEM(4, "Assassin "+name, GOSSIP_SENDER_MAIN, 9);
                     Player->ADD_GOSSIP_ITEM(4, "Doctor "+name, GOSSIP_SENDER_MAIN, 10);
@@ -141,7 +141,7 @@
                                     }
                                     break;
                                    
-                                  /*  case 5:
+                                /*    case 5:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -149,15 +149,15 @@
                                                     Player->SetTitle(titleInfo, false);
                                                     Creature->MonsterWhisper("You earned Arena Master title!", Player->GetGUID());
                                                     Player->CLOSE_GOSSIP_MENU();
-                                    }
-                                    else
+                                    }*/
+                                    
                                     {
                                      Creature->MonsterWhisper("You don't have a PvE Titles Token!", Player->GetGUID());
                                      Player->CLOSE_GOSSIP_MENU();
                                     }
-                                  */  break;
+                                    break;
                                    
-                                    case 5:
+                                    case 6:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -173,7 +173,7 @@
                                     }
                                     break;
                                    
-                                    case 6:
+                                    case 7:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -189,7 +189,7 @@
                                     }
                                     break;
                                    
-                                    case 7:
+                                    case 8:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -205,7 +205,7 @@
                                     }
                                     break;
                                    
-                                    case 8:
+                                    case 9:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -221,7 +221,7 @@
                                     }
                                     break;
                                    
-                                    case 9:
+                                    case 10:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -237,7 +237,7 @@
                                     }
                                     break;
                                    
-                                    case 10:
+                                    case 11:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -253,7 +253,7 @@
                                     }
                                     break;
                                    
-                                    case 11:
+                                    case 12:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -269,7 +269,7 @@
                                     }
                                     break;
                                    
-                                    case 12:
+                                    case 13:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -285,7 +285,7 @@
                                     }
                                     break;
                                    
-                                    case 13:
+                                    case 14:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -301,7 +301,7 @@
                                     }
                                     break;
                                    
-                                    case 14:
+                                    case 15:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -317,7 +317,7 @@
                                     }
                                     break;
      
-                                    case 15:
+                                    case 16:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -333,7 +333,7 @@
                                     }
                                     break;
      
-                                    case 16:
+                                    case 17:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -349,7 +349,7 @@
                                     }
                                     break;
                                            
-                                    case 17:
+                                    case 18:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -365,7 +365,7 @@
                                     }
                                     break;
      
-                                    case 18:
+                                    case 19:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -381,7 +381,7 @@
                                     }
                                     break;
                                    
-                                    case 19:
+                                    case 20:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -397,7 +397,7 @@
                                      }
                                     break;
                                    
-                                    case 20:
+                                    case 21:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -413,7 +413,7 @@
                                      }
                                     break;
                                                            
-                                    case 21:
+                                    case 22:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -429,7 +429,7 @@
                                      }
                                     break;
                                                                    
-                                    case 22:
+                                    case 23:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -445,7 +445,7 @@
                                      }
                                     break;
                                                                    
-                                    case 23:
+                                    case 24:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -461,7 +461,7 @@
                                      }
                                      break;
                                      
-                                    case 24:
+                                    case 25:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -477,7 +477,7 @@
                                      }
                                      break;
                                      
-                                    case 25:
+                                    case 26:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -493,7 +493,7 @@
                                      }
                                      break;
                                      
-                                    case 26:
+                                    case 27:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);
@@ -509,7 +509,7 @@
                                      }
                                      break;
                                      
-                                    case 27:
+                                    case 28:
                                     if (Player->HasItemCount(TITLE_TOKEN, TITLE_PRICE, true))
                                     {
                                     Player->DestroyItemCount(TITLE_TOKEN, TITLE_PRICE, true);

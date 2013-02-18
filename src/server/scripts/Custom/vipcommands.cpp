@@ -19,19 +19,19 @@ public:
         static ChatCommand vipCommandTable[] =
 
         {
-            { "mall",	    SEC_PLAYER,     true, &HandleVipMallCommand,         "", NULL },
-            { "chat",	    SEC_PLAYER,     true, &HandleVipChatCommand,         "", NULL },
-            { "changerace",    SEC_PLAYER,  false, &HandleChangeRaceCommand,             "", NULL },
-	    { "changefaction",	SEC_PLAYER,  false, &HandleChangeFactionCommand,		"", NULL },
-	    { "maxskills",	SEC_PLAYER,  false, &HandleMaxSkillsCommand,		"", NULL },
-	    { "customize",	SEC_PLAYER,  false, &HandleCustomizeCommand,		"", NULL },
-	    { "tele",           SEC_PLAYER,  false, &HandleTeleCommand,		"", NULL },
+            { "mall",	    SEC_MODERATOR,     true, &HandleVipMallCommand,         "", NULL },
+            { "chat",	    SEC_MODERATOR,     true, &HandleVipChatCommand,         "", NULL },
+            { "changerace",    SEC_MODERATOR,  false, &HandleChangeRaceCommand,             "", NULL },
+	    { "changefaction",	SEC_MODERATOR,  false, &HandleChangeFactionCommand,		"", NULL },
+	    { "maxskills",	SEC_MODERATOR,  false, &HandleMaxSkillsCommand,		"", NULL },
+	    { "customize",	SEC_MODERATOR,  false, &HandleCustomizeCommand,		"", NULL },
+	    { "tele",           SEC_MODERATOR,  false, &HandleTeleCommand,		"", NULL },
  
             { NULL,             0,                     false, NULL,                                           "", NULL }
         };
         static ChatCommand commandTable[] =
         {
-            { "vip",	    SEC_PLAYER,   true, NULL,      "",  vipCommandTable},
+            { "vip",	    SEC_MODERATOR,   true, NULL,      "",  vipCommandTable},
 	       { NULL,             0,                  false, NULL,                               "", NULL }
         };
         return commandTable;
@@ -166,17 +166,17 @@ static bool HandleVipChatCommand(ChatHandler * handler, const char * args)
 
 		switch(player->GetSession()->GetSecurity())
 		{
- 			case SEC_VIP: // VIP
+ 			case SEC_MODERATOR: // VIP
 				msg += "|cffff0000[VIP|r |cff18be00Chat:|r [";
 				msg += player->GetName();
 				msg += "]: |CFF7BBEF7";
 				break;
 
-			case SEC_MODERATOR: // Trial GM
+			/*case SEC_MODERATOR: // Trial GM
 				msg += "|cffff0000[Trial GM|r |cff18be00Chat:|r [";
 				msg += player->GetName();
 				msg += "]: |CFF7BBEF7";
-				break;
+				break;*/
 				
 			case SEC_GAMEMASTER: // GM
 				msg += "|CFF520084[Gamemaster|r |cff18be00Chat:|r [";
@@ -184,7 +184,7 @@ static bool HandleVipChatCommand(ChatHandler * handler, const char * args)
 				msg += "]: |CFF7BBEF7";
 				break;
 				
-			case SEC_EGM: // EGM
+		/*	case SEC_EGM: // EGM
 				msg += "|cff00ffff[Event Master|r |cff18be00Chat:|r [";
 				msg += player->GetName();
 				msg += "]: |CFF7BBEF7";
@@ -194,7 +194,7 @@ static bool HandleVipChatCommand(ChatHandler * handler, const char * args)
 				msg += "|CFF7BBEF7[Management|r |cff18be00Chat:|r [";
 				msg += player->GetName();
 				msg += "]: |CFF7BBEF7";
-				break;
+				break;*/
 				
 			case SEC_ADMINISTRATOR: // Admin
 				msg += "|cfffa9900[Administrator|r |cff18be00Chat:|r [";

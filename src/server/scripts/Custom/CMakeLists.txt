@@ -13,7 +13,7 @@ set(scripts_STAT_SRCS
 Custom/Title_NPC.cpp
 Custom/title_rewarder.cpp
 #Custom/duel_reset.cpp
-#Custom/vipcommands.cpp
+Custom/vipcommands.cpp
 #Custom/teleport_npc.cpp
 )
 

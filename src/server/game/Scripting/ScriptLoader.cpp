@@ -1292,7 +1292,7 @@ void AddSC_Title_NPC();
 //void AddSC_duel_reset();
 void AddSC_title_rewarder();
 //void AddSC_teleport_npc();
-//void AddSC_vipcommands();
+void AddSC_vipcommands();
 
 #endif
 
@@ -1304,6 +1304,6 @@ AddSC_title_rewarder();
 AddSC_Title_NPC();
 //AddSC_teleport_npc();
 //AddSC_duel_reset();
-//AddSC_vipcommands();
+AddSC_vipcommands();
 #endif
 }
