@@ -1290,9 +1290,10 @@ void AddBattlegroundScripts()
 /* This is where custom scripts' loading functions should be declared. */
 void AddSC_Title_NPC();
 //void AddSC_duel_reset();
-void AddSC_title_rewarder();
+//void AddSC_title_rewarder();
 //void AddSC_teleport_npc();
 void AddSC_vipcommands();
+void AddSC_zone_lock();
 
 #endif
 
@@ -1300,10 +1301,11 @@ void AddCustomScripts()
 {
 #ifdef SCRIPTS
     //* This is where custom scripts should be added. */
-AddSC_title_rewarder();
+//AddSC_title_rewarder();
 AddSC_Title_NPC();
 //AddSC_teleport_npc();
 //AddSC_duel_reset();
 AddSC_vipcommands();
+AddSC_zone_lock();
 #endif
 }

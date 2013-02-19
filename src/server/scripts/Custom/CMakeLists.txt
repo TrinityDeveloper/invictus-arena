@@ -11,10 +11,11 @@
 set(scripts_STAT_SRCS
   ${scripts_STAT_SRCS}
 Custom/Title_NPC.cpp
-Custom/title_rewarder.cpp
+#Custom/title_rewarder.cpp
 #Custom/duel_reset.cpp
 Custom/vipcommands.cpp
 #Custom/teleport_npc.cpp
+Custom/zone_lock.cpp
 )
 
 message("  -> Prepared: Custom")

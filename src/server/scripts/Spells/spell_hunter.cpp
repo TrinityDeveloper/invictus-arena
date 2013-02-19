@@ -360,16 +360,34 @@ class spell_hun_masters_call : public SpellScriptLoader
                 return true;
             }
 
-            void HandleDummy(SpellEffIndex /*effIndex*/)
+             SpellCastResult CheckIfPetInLOS()
             {
-                if (Unit* ally = GetHitUnit())
-                    if (Player* caster = GetCaster()->ToPlayer())
-                        if (Pet* target = caster->GetPet())
-                        {
-                            TriggerCastFlags castMask = TriggerCastFlags(TRIGGERED_FULL_MASK & ~TRIGGERED_IGNORE_CASTER_AURASTATE);
-                            target->CastSpell(ally, GetEffectValue(), castMask);
-                            target->CastSpell(ally, GetSpellInfo()->Effects[EFFECT_0].CalcValue(), castMask);
-                        }
+                 if (Player* player = GetCaster()->ToPlayer())
+ 		
+               {
+ 		
+                    if (Pet* pet = player->GetPet())
+ 	 	
+                    {
+ 	 	
+                       	
+                        if (pet->isDead())
+ 		
+                            return SPELL_FAILED_NO_PET;
+ 		
+                        float x, y, z;
+ 	 	
+                        pet->GetPosition(x, y, z);
+ 	 	
+                        if (player->IsWithinLOS(x, y, z))
+ 	 	
+                            return SPELL_CAST_OK;
+ 		
+                    }
+ 	 	
+                }
+ 	 	
+                return SPELL_FAILED_LINE_OF_SIGHT;
             }
 
             void HandleScriptEffect(SpellEffIndex /*effIndex*/)
@@ -378,15 +396,26 @@ class spell_hun_masters_call : public SpellScriptLoader
                 {
                     // Cannot be processed while pet is dead
                     TriggerCastFlags castMask = TriggerCastFlags(TRIGGERED_FULL_MASK & ~TRIGGERED_IGNORE_CASTER_AURASTATE);
-                    target->CastSpell(target, SPELL_HUNTER_MASTERS_CALL_TRIGGERED, castMask);
+                   target->CastSpell(target, GetEffectValue(), castMask);
+ 		    target->CastSpell(target, SPELL_HUNTER_MASTERS_CALL_TRIGGERED, castMask);
+		    if (Unit* ally = GetExplTargetUnit())
+ 		
+                    {
+ 		
+                        target->CastSpell(ally, GetEffectValue(), castMask);
+ 	 	
+                        target->CastSpell(ally, GetSpellInfo()->Effects[EFFECT_0].CalcValue(), castMask);
+ 	 	
+                    }
                 }
             }
 
             void Register()
             {
-                OnEffectHitTarget += SpellEffectFn(spell_hun_masters_call_SpellScript::HandleDummy, EFFECT_0, SPELL_EFFECT_DUMMY);
+               
                 OnEffectHitTarget += SpellEffectFn(spell_hun_masters_call_SpellScript::HandleScriptEffect, EFFECT_1, SPELL_EFFECT_SCRIPT_EFFECT);
-            }
+           OnCheckCast += SpellCheckCastFn(spell_hun_masters_call_SpellScript::CheckIfPetInLOS);
+ }
         };
 
         SpellScript* GetSpellScript() const

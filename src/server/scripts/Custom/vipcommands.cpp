@@ -172,11 +172,6 @@ static bool HandleVipChatCommand(ChatHandler * handler, const char * args)
 				msg += "]: |CFF7BBEF7";
 				break;
 
-			/*case SEC_MODERATOR: // Trial GM
-				msg += "|cffff0000[Trial GM|r |cff18be00Chat:|r [";
-				msg += player->GetName();
-				msg += "]: |CFF7BBEF7";
-				break;*/
 				
 			case SEC_GAMEMASTER: // GM
 				msg += "|CFF520084[Gamemaster|r |cff18be00Chat:|r [";
@@ -184,26 +179,15 @@ static bool HandleVipChatCommand(ChatHandler * handler, const char * args)
 				msg += "]: |CFF7BBEF7";
 				break;
 				
-		/*	case SEC_EGM: // EGM
-				msg += "|cff00ffff[Event Master|r |cff18be00Chat:|r [";
-				msg += player->GetName();
-				msg += "]: |CFF7BBEF7";
-				break;
-				
-			case SEC_MGMT: // MGMT
-				msg += "|CFF7BBEF7[Management|r |cff18be00Chat:|r [";
-				msg += player->GetName();
-				msg += "]: |CFF7BBEF7";
-				break;*/
-				
-			case SEC_ADMINISTRATOR: // Admin
+						
+			case SEC_ADMINISTRATOR: // EGM
 				msg += "|cfffa9900[Administrator|r |cff18be00Chat:|r [";
 				msg += player->GetName();
 				msg += "]: |CFF7BBEF7";
 				break;
 				
-			case SEC_CONSOLE: // Console
-				msg += "|CFF18E7BD[Console|r |cff18be00Chat:|r [";
+			case SEC_CONSOLE: // ADMIN
+				msg += "|CFF18E7BD[Administrator|r |cff18be00Chat:|r [";
 				msg += player->GetName();
 				msg += "]: |CFF7BBEF7";
 				break;
