@@ -10,9 +10,9 @@ public:
 
 	    void OnUpdateZone(Player* player, uint32 newZone, uint32 newArea) { 
 	    
-  if(newZone == 876 && !player->HasItemCount(26044, 1, false))
+  if(newZone == 876 && player->GetSession()->GetSecurity() < SEC_MODERATOR)
   {
-   ChatHandler(player->GetSession()).PSendSysMessage("This area is only for VIPs.");
+   ChatHandler(player->GetSession()).PSendSysMessage("Shoo! This area is only for VIPs! If you wish to become one, contact a Staff member.");
    if (player->GetTeam() == ALLIANCE)
    {
 	    player->TeleportTo(0, -4953.955078f, -1006.528f, 501.441223f, .860296f);

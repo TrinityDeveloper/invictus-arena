@@ -17,6 +17,7 @@
  */
 
 #include "Unit.h"
+#include "../../../scripts/Custom/TransmogDisplayVendorConf.h"
 #include "Common.h"
 #include "Battlefield.h"
 #include "BattlefieldMgr.h"

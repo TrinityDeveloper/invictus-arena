@@ -16,6 +16,10 @@ Custom/Title_NPC.cpp
 Custom/vipcommands.cpp
 #Custom/teleport_npc.cpp
 Custom/zone_lock.cpp
+Custom/npc_hunterpetvendor
+Custom/TransmogDisplayVendorConf.h
+Custom/TransmogDisplayVendor.cpp
+Custom/vip_granter.cpp
 )
 
 message("  -> Prepared: Custom")

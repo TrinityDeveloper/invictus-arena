@@ -1294,6 +1294,9 @@ void AddSC_Title_NPC();
 //void AddSC_teleport_npc();
 void AddSC_vipcommands();
 void AddSC_zone_lock();
+void AddSC_npc_hunterpetvendor();
+void AddSC_NPC_TransmogDisplayVendor();
+void AddSC_vip_granter();
 
 #endif
 
@@ -1307,5 +1310,8 @@ AddSC_Title_NPC();
 //AddSC_duel_reset();
 AddSC_vipcommands();
 AddSC_zone_lock();
+AddSC_npc_hunterpetvendor();
+AddSC_NPC_TransmogDisplayVendor();
+AddSC_vip_granter();
 #endif
 }
