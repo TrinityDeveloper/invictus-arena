@@ -21,11 +21,11 @@ public:
         {
             { "mall",	    SEC_MODERATOR,     true, &HandleVipMallCommand,         "", NULL },
             { "chat",	    SEC_MODERATOR,     true, &HandleVipChatCommand,         "", NULL },
-            { "changerace",    SEC_MODERATOR,  false, &HandleChangeRaceCommand,             "", NULL },
-	    { "changefaction",	SEC_MODERATOR,  false, &HandleChangeFactionCommand,		"", NULL },
-	    { "maxskills",	SEC_MODERATOR,  false, &HandleMaxSkillsCommand,		"", NULL },
-	    { "customize",	SEC_MODERATOR,  false, &HandleCustomizeCommand,		"", NULL },
-	    { "tele",           SEC_MODERATOR,  false, &HandleTeleCommand,		"", NULL },
+           // { "changerace",    SEC_PLAYER,  false, &HandleChangeRaceCommand,             "", NULL },
+	   // { "changefaction",	SEC_PLAYER,  false, &HandleChangeFactionCommand,		"", NULL },
+	   // { "maxskills",	SEC_PLAYER,  false, &HandleMaxSkillsCommand,		"", NULL },
+	    //{ "customize",	SEC_PLAYER,  false, &HandleCustomizeCommand,		"", NULL },
+	    //{ "tele",           SEC_MODERATOR,  false, &HandleTeleCommand,		"", NULL },
  
             { NULL,             0,                     false, NULL,                                           "", NULL }
         };
@@ -38,7 +38,7 @@ public:
     }
 
 
-static bool HandleTeleCommand(ChatHandler* handler, const char* args)
+/*static bool HandleTeleCommand(ChatHandler* handler, const char* args)
     {
         if (!*args)
             return false;
@@ -83,7 +83,7 @@ static bool HandleTeleCommand(ChatHandler* handler, const char* args)
         me->TeleportTo(tele->mapId, tele->position_x, tele->position_y, tele->position_z, tele->orientation);
         return true;
 		}
-
+		*/
 static bool HandlevipCommand(ChatHandler* handler, const char* args)
     {
 
@@ -93,41 +93,41 @@ static bool HandlevipCommand(ChatHandler* handler, const char* args)
             return true;
     }
 
-static bool HandleChangeRaceCommand(ChatHandler* handler, const char* args)
+/*static bool HandleChangeRaceCommand(ChatHandler* handler, const char* args)
     {
 
         Player* me = handler->GetSession()->GetPlayer();
 		me->SetAtLoginFlag(AT_LOGIN_CHANGE_RACE);
 		handler->PSendSysMessage("Relog to change the race of your character.");
         return true;
-    }
+    }*/
 
-static bool HandleChangeFactionCommand(ChatHandler* handler, const char* args)
+/*static bool HandleChangeFactionCommand(ChatHandler* handler, const char* args)
     {
 
         Player* me = handler->GetSession()->GetPlayer();
 		me->SetAtLoginFlag(AT_LOGIN_CHANGE_FACTION);
 		handler->PSendSysMessage("Relog to change the faction of your character.");
         return true;
-    }
+    }*/
 
-static bool HandleMaxSkillsCommand(ChatHandler* handler, const char* args)
+/*static bool HandleMaxSkillsCommand(ChatHandler* handler, const char* args)
     {
 
         Player* me = handler->GetSession()->GetPlayer();
 		me->UpdateSkillsForLevel();
 		handler->PSendSysMessage("Your weapon skills have been maxed.");
         return true;
-    }
+    }*/
 
-static bool HandleCustomizeCommand(ChatHandler* handler, const char* args)
+/*static bool HandleCustomizeCommand(ChatHandler* handler, const char* args)
     {
 
         Player* me = handler->GetSession()->GetPlayer();
 		me->SetAtLoginFlag(AT_LOGIN_CUSTOMIZE);
 		handler->PSendSysMessage("Relog to customize your character.");
         return true;
-    }
+    }*/
 
 static bool HandleVipMallCommand(ChatHandler* handler, const char* args)
     {

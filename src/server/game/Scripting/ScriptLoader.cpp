@@ -1291,12 +1291,14 @@ void AddBattlegroundScripts()
 void AddSC_Title_NPC();
 //void AddSC_duel_reset();
 //void AddSC_title_rewarder();
-//void AddSC_teleport_npc();
+void AddSC_teleport_npc();
 void AddSC_vipcommands();
 void AddSC_zone_lock();
 void AddSC_npc_hunterpetvendor();
 void AddSC_NPC_TransmogDisplayVendor();
 void AddSC_vip_granter();
+void AddSC_utility_commandscript();
+
 
 #endif
 
@@ -1306,12 +1308,13 @@ void AddCustomScripts()
     //* This is where custom scripts should be added. */
 //AddSC_title_rewarder();
 AddSC_Title_NPC();
-//AddSC_teleport_npc();
+AddSC_teleport_npc();
 //AddSC_duel_reset();
 AddSC_vipcommands();
 AddSC_zone_lock();
 AddSC_npc_hunterpetvendor();
 AddSC_NPC_TransmogDisplayVendor();
+AddSC_utility_commandscript();
 AddSC_vip_granter();
 #endif
 }

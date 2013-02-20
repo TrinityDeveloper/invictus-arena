@@ -14,12 +14,13 @@ Custom/Title_NPC.cpp
 #Custom/title_rewarder.cpp
 #Custom/duel_reset.cpp
 Custom/vipcommands.cpp
-#Custom/teleport_npc.cpp
+Custom/teleport_npc.cpp
 Custom/zone_lock.cpp
-Custom/npc_hunterpetvendor
+Custom/npc_hunterpetvendor.cpp
 Custom/TransmogDisplayVendorConf.h
 Custom/TransmogDisplayVendor.cpp
 Custom/vip_granter.cpp
+Custom/utility_commandscript.cpp
 )
 
 message("  -> Prepared: Custom")
