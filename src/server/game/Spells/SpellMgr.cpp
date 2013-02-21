@@ -2979,11 +2979,10 @@ void SpellMgr::LoadDbcDataCorrections()
             case 53096: // Quetz'lun's Judgment
                 spellInfo->MaxAffectedTargets = 1;
                 break;
-case 24259:
-spellInfo->speed = 80;
-break;
-
-            case 42730:
+			case 24259:
+				spellInfo->speed = 80;
+				break;
+			case 42730:
                 spellInfo->EffectTriggerSpell[EFFECT_1] = 42739;
                 break;
             case 59735:

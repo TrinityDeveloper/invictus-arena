@@ -12607,13 +12607,7 @@ void Player::DestroyItem(uint8 bag, uint8 slot, bool update)
                 // remove item dependent auras and casts (only weapon and armor slots)
                 RemoveItemDependentAurasAndCasts(pItem);
 
-/*if (aura->GetId() == 46924)
-{
-++itr;
-continue;
-}*/
-
-                // update expertise and armor penetration - passive auras may need it
+			    // update expertise and armor penetration - passive auras may need it
                 switch (slot)
                 {
                     case EQUIPMENT_SLOT_MAINHAND:
@@ -23030,8 +23024,14 @@ bool Player::CanNoReagentCast(SpellInfo const* spellInfo) const
     return false;
 }
 
-void Player::RemoveItemDependentAurasAndCasts(Item* pItem)
+		void Player::RemoveItemDependentAurasAndCasts(Item* pItem)
 {
+		/*	// Bladestorm
+			if (HasAura(46924))
+{
+			++itr;
+			continue;
+}*/
     for (AuraMap::iterator itr = m_ownedAuras.begin(); itr != m_ownedAuras.end();)
     {
         Aura* aura = itr->second;
