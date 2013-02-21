@@ -28,6 +28,7 @@
 #include "BattlegroundAV.h"
 #include "Battleground.h"
 #include "BattlegroundMgr.h"
+#include "SpellAuras.h"
 #include "CellImpl.h"
 #include "Channel.h"
 #include "ChannelMgr.h"
@@ -12450,6 +12451,13 @@ void Player::RemoveItem(uint8 bag, uint8 slot, bool update)
                 if (slot < EQUIPMENT_SLOT_END)
                 {
                     RemoveItemDependentAurasAndCasts(pItem);
+/*
+if (aura->GetId() == 46924)
+{
+++itr;
+continue;
+}*/
+
 
                     // remove held enchantments, update expertise
                     if (slot == EQUIPMENT_SLOT_MAINHAND)
@@ -12598,6 +12606,12 @@ void Player::DestroyItem(uint8 bag, uint8 slot, bool update)
             {
                 // remove item dependent auras and casts (only weapon and armor slots)
                 RemoveItemDependentAurasAndCasts(pItem);
+
+/*if (aura->GetId() == 46924)
+{
+++itr;
+continue;
+}*/
 
                 // update expertise and armor penetration - passive auras may need it
                 switch (slot)

@@ -81,8 +81,7 @@ class teleport_npc : public CreatureScript
             player->ADD_GOSSIP_ITEM(GOSSIP_ICON_TABARD, "Cities", GOSSIP_SENDER_MAIN, 1);
             player->ADD_GOSSIP_ITEM(GOSSIP_ICON_TABARD, "Malls", GOSSIP_SENDER_MAIN, 3);
          
-                        if (player->HasItemCount(45924, 1, false) ||
-                player->GetSession()->GetSecurity() >= SEC_CONSOLE)
+                        if (player->GetSession()->GetSecurity() >= SEC_MODERATOR)
                 player->ADD_GOSSIP_ITEM(GOSSIP_ICON_TABARD, "VIP Mall", GOSSIP_SENDER_MAIN, 5);
                 player->ADD_GOSSIP_ITEM(GOSSIP_ICON_BATTLE, "PvP Zones", GOSSIP_SENDER_MAIN, 2);
                         player->ADD_GOSSIP_ITEM(GOSSIP_ICON_BATTLE, "Duel Zone - Arathi Highlands", GOSSIP_SENDER_MAIN, 6);

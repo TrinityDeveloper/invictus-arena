@@ -21,6 +21,7 @@ public:
         {
             { "mall",	    SEC_MODERATOR,     true, &HandleVipMallCommand,         "", NULL },
             { "chat",	    SEC_MODERATOR,     true, &HandleVipChatCommand,         "", NULL },
+			 { "duel",	    SEC_MODERATOR,     true, &HandleDuelChatCommand,         "", NULL },
            // { "changerace",    SEC_PLAYER,  false, &HandleChangeRaceCommand,             "", NULL },
 	   // { "changefaction",	SEC_PLAYER,  false, &HandleChangeFactionCommand,		"", NULL },
 	   // { "maxskills",	SEC_PLAYER,  false, &HandleMaxSkillsCommand,		"", NULL },
@@ -155,7 +156,31 @@ static bool HandleVipMallCommand(ChatHandler* handler, const char* args)
                 return true;
     }
 
+static bool HandleDuelChatCommand(ChatHandler* handler, const char* args)
+    {
 
+        Player* me = handler->GetSession()->GetPlayer();
+
+        if (me->isInCombat())
+        {
+            handler->SendSysMessage(LANG_YOU_IN_COMBAT);
+            handler->SetSentErrorMessage(true);
+            return false;
+        }
+
+        // stop flight if need
+        if (me->isInFlight())
+        {
+            me->GetMotionMaster()->MovementExpired();
+            me->CleanupAfterTaxiFlight();
+        }
+        // save only in non-flight case
+        else
+            me->SaveRecallPosition();
+
+		me->TeleportTo(530,	-1521.469238f,	-12498.887695f,	3.447278f,	.025931f); // MapId, X, Y, Z, O
+                return true;
+    }
 static bool HandleVipChatCommand(ChatHandler * handler, const char * args)
 	{
 		if (!args)
@@ -167,27 +192,27 @@ static bool HandleVipChatCommand(ChatHandler * handler, const char * args)
 		switch(player->GetSession()->GetSecurity())
 		{
  			case SEC_MODERATOR: // VIP
-				msg += "|cffff0000[VIP|r |cff18be00Chat:|r [";
+				msg += "|cffff0000[VIP|r[";
 				msg += player->GetName();
 				msg += "]: |CFF7BBEF7";
 				break;
 
 				
 			case SEC_GAMEMASTER: // GM
-				msg += "|CFF520084[Gamemaster|r |cff18be00Chat:|r [";
+				msg += "|CFF520084[Gamemaster|r[";
 				msg += player->GetName();
 				msg += "]: |CFF7BBEF7";
 				break;
 				
 						
 			case SEC_ADMINISTRATOR: // EGM
-				msg += "|cfffa9900[Administrator|r |cff18be00Chat:|r [";
+				msg += "|cfffa9900[Event Master|r["; //|cff18be00Chat:|r
 				msg += player->GetName();
 				msg += "]: |CFF7BBEF7";
 				break;
 				
 			case SEC_CONSOLE: // ADMIN
-				msg += "|CFF18E7BD[Administrator|r |cff18be00Chat:|r [";
+				msg += "|CFF18E7BD[Administrator|r[";
 				msg += player->GetName();
 				msg += "]: |CFF7BBEF7";
 				break;
